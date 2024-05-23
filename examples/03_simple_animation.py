@@ -1,6 +1,6 @@
 # import modules:
 import board
-import neopixel
+import neopixel # neopixel.py should be in /lib
 import time
 
 # define program constants

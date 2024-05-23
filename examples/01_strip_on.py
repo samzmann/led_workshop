@@ -1,6 +1,6 @@
 # import modules:
 import board
-import neopixel
+import neopixel # neopixel.py should be in /lib
 
 # create pixels object:
 pixels = neopixel.NeoPixel(
