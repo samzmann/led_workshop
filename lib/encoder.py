@@ -1,5 +1,5 @@
-import digitalio
 import rotaryio
+import digitalio
 from adafruit_debouncer import Debouncer
 
 

@@ -1,12 +1,11 @@
 # import modules:
 import board
-from encoder import Encoder # encoder.py should be in /lib
+from encoder_simple import Encoder # encoder_simple.py should be in /lib
 
 # create our Encoder object:
 encoder = Encoder(
-    board.GP16, # CLK pin
-    board.GP17, # DT pin
-    board.GP15, # SW pin
+    board.GP17, # CLK pin
+    board.GP18, # DT pin
 )
 
 while True:
@@ -19,12 +18,3 @@ while True:
         print("clockwise")
     elif rotation == "couterclockwise":
         print("couterclockwise")
-
-    # get the latest button press value:
-    press = encoder.updatePress()
-
-    # check press value and do stuff with it:
-    if press == "pressed":
-        print("pressed")
-    elif press == "released":
-        print("released")

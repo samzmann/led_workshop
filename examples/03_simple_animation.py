@@ -15,7 +15,7 @@ last_timestamp = time.monotonic()
 
 # create pixels object:
 pixels = neopixel.NeoPixel(
-    board.GP0,
+    board.GP16,
     NUM_PIXELS,
     brightness=0.3,
     auto_write=False

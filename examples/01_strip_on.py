@@ -4,7 +4,7 @@ import neopixel # neopixel.py should be in /lib
 
 # create pixels object:
 pixels = neopixel.NeoPixel(
-    board.GP0,
+    board.GP16,
     9,
     brightness=0.3,
     auto_write=False

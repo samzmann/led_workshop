@@ -1,41 +1,27 @@
 # import modules:
 import board
-import time
+import random
 import neopixel # neopixel.py should be in /lib
 from encoder import Encoder # encoder.py should be in /lib
+
+# function to generate a random RGB value:
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    return (r, g, b)
 
 # define program constants
 NUM_PIXELS = 9
 COLOR_OFF = (0, 0 ,0)
-COLOR_RED = (255, 0, 0)
-COLOR_GREEN = (0, 255, 0)
-COLOR_BLUE = (0, 0, 255)
-COLOR_YELLOW = (255, 255, 0)
-COLOR_CYAN = (0, 255, 255)
-COLOR_MAGENTA = (255, 0, 255)
-COLOR_ORANGE = (255, 165, 0)
-COLOR_PURPLE = (128, 0, 128)
-COLOR_PINK = (255, 192, 203)
-COLORS = [
-    COLOR_RED,
-    COLOR_GREEN,
-    COLOR_BLUE,
-    COLOR_YELLOW,
-    COLOR_CYAN,
-    COLOR_MAGENTA,
-    COLOR_ORANGE,
-    COLOR_PURPLE,
-    COLOR_PINK
-]
 
 # define program variables
 pixel_on_index = 0
-color_index = 0
-color_on = COLORS[color_index]
+color_on = random_color()
 
 # create pixels object:
 pixels = neopixel.NeoPixel(
-    board.GP0,
+    board.GP16,
     NUM_PIXELS,
     brightness=0.3,
     auto_write=False
@@ -43,14 +29,14 @@ pixels = neopixel.NeoPixel(
 
 # create our Encoder object:
 encoder = Encoder(
-    board.GP16, # CLK pin
-    board.GP17, # DT pin
-    board.GP15, # SW pin
+    board.GP17, # CLK pin
+    board.GP18, # DT pin
+    board.GP19, # SW pin
 )
 
 # reset the leds:
 pixels.fill((0, 0, 0))
-pixels[pixel_on_index] = COLORS[color_index]
+pixels[pixel_on_index] = color_on
 pixels.show()
 
 while True:
@@ -78,7 +64,7 @@ while True:
                 pixel_on_index = NUM_PIXELS - 1
 
         # turn ON the new pixel that is currently on
-        pixels[pixel_on_index] = COLORS[color_index]
+        pixels[pixel_on_index] = color_on
 
         # update the physical led strip:
         pixels.show()
@@ -86,15 +72,13 @@ while True:
     # get the latest button press value:
     press = encoder.updatePress()
 
-    # increment color_index when encoder button is pressed:
+    # change color when encoder button is pressed:
     if press == "pressed":
-        color_index += 1
-        # wrap around if color_index is greater than the length of the COLORS array:
-        if color_index >= len(COLORS):
-            color_index = 0
+        # generate a new random color:
+        color_on = random_color()
 
         # update the color of the pixel that is currently on
-        pixels[pixel_on_index] = COLORS[color_index]
+        pixels[pixel_on_index] = color_on
 
         # update the physical led strip:
         pixels.show()
