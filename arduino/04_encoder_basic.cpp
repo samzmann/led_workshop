@@ -1,7 +1,7 @@
 #include <RoxMux.h>
 
-#define PIN_CLK 4 // CLK pin for the encoder
-#define PIN_DT 5  // DT pin for the encoder
+#define PIN_CLK 11 // CLK pin for the encoder
+#define PIN_DT 12  // DT pin for the encoder
 
 RoxEncoder encoder;
 
