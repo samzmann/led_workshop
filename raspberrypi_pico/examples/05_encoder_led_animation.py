@@ -47,7 +47,7 @@ while True:
             if pixel_on_index >= NUM_PIXELS:
                 pixel_on_index = 0
 
-        elif rotation == "couterclockwise":
+        elif rotation == "counterclockwise":
             pixel_on_index -= 1
             
             # wrap around if pixel_on_index is smaller than 0:
@@ -55,7 +55,7 @@ while True:
                 pixel_on_index = NUM_PIXELS - 1
 
         # turn ON the new pixel that is currently on
-        pixels[pixel_on_index] = COLOR_O
+        pixels[pixel_on_index] = COLOR_ON
 
         # update the physical led strip:
         pixels.show()

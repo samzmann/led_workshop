@@ -56,7 +56,7 @@ while True:
             if pixel_on_index >= NUM_PIXELS:
                 pixel_on_index = 0
 
-        elif rotation == "couterclockwise":
+        elif rotation == "counterclockwise":
             pixel_on_index -= 1
             
             # wrap around if pixel_on_index is smaller than 0:

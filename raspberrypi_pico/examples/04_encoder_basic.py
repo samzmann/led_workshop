@@ -16,5 +16,5 @@ while True:
     # check rotation direction and do stuff with it:
     if rotation == "clockwise":
         print("clockwise")
-    elif rotation == "couterclockwise":
-        print("couterclockwise")
+    elif rotation == "counterclockwise":
+        print("counterclockwise")

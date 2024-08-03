@@ -24,7 +24,7 @@ class Encoder():
             if isRotatingClockwise:
                 return "clockwise"
             else:
-                return "couterclockwise"
+                return "counterclockwise"
         
     def updatePress(self):
         self.button.update()

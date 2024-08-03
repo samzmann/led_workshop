@@ -21,7 +21,7 @@ This sketch demonstrates how to turn on specific pixels on the strip.
 This sketch demonstrates how to animate the LED strip by turning on one pixel at a time in sequence, making use of the "main loop". The pixel turns off after a specified interval and the next pixel in the sequence turns on, creating a moving light effect.
 
 ## 04. Encoder Basic
-This simple sketch iniitalizes an encoders. In the main loop is reads the value of the encoder and if a turn is dectected, it prints out the direction: clockwise or couterclockwise.
+This simple sketch iniitalizes an encoders. In the main loop is reads the value of the encoder and if a turn is dectected, it prints out the direction: clockwise or counterclockwise.
 
 ## 05. Encoder LED Animation
 This sketch is a variant of example 03. Instead of using time to control the position of the lit LED, it uses an encoder. As you turn the encoder clockwise or counterclockwise, the lit LED moves up or down along the strip.
